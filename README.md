@@ -65,6 +65,7 @@ streamlit run love_calculator.py
 ## 🌍 Live Demo & GitHub Repository  
 
 🔗 **Try it Now!** 👉https://love-notes-ai.streamlit.app/
+
 📌 **GitHub Repo:** 👉https://github.com/vinothkumar447/Love-Notes-AI 
 
 ---  

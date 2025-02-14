@@ -1,4 +1,6 @@
-streamlit
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+transformers==4.37.0
+streamlit==1.30.0
 streamlit-option-menu
-transformers
-torch

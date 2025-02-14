@@ -1,7 +1,18 @@
 pip==25.0.1
+
+# Streamlit & core dependencies
+streamlit==1.30.0
+streamlit-option-menu
+
+# PyTorch & Transformers
 torch==2.0.1
 torchvision==0.15.2
 torchaudio==2.0.2
 transformers==4.37.0
-streamlit==1.30.0
-streamlit-option-menu
+
+# Fix potential dependency conflicts
+protobuf==3.20.3
+rich==13.9.4
+pygments==2.19.1
+markdown-it-py==3.0.0
+mdurl==0.1.2

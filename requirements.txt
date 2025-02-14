@@ -1,5 +1,5 @@
-streamlit
-streamlit-option-menu
 torch
-requests
 transformers
+sentencepiece
+accelerate
+streamlit-option-menu

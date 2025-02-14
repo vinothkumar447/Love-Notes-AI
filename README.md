@@ -26,8 +26,7 @@ Many love calculators just show random percentages, but **Love Calculator AI** i
 🔹 **Frontend**: **Streamlit** – For an intuitive and interactive UI  
 🔹 **Backend**: **Python** – The core logic behind the calculations  
 🔹 **AI/ML**: **Hugging Face Transformers** – For generating love notes  
-🔹 **Deployment**: **Netlify / Streamlit Cloud** – To host the application online  
-🔹 **Data Handling**: **Pandas & NumPy** – For processing user inputs efficiently  
+🔹 **Deployment**: **Netlify / Streamlit Cloud** – To host the application online   
 
 ---  
 
@@ -65,8 +64,8 @@ streamlit run love_calculator.py
 
 ## 🌍 Live Demo & GitHub Repository  
 
-🔗 **Try it Now!** 👉 [Live Demo](YOUR_DEPLOYMENT_LINK)  
-📌 **GitHub Repo:** 👉 [GitHub Link](YOUR_GITHUB_REPO)  
+🔗 **Try it Now!** 👉https://love-notes-ai.streamlit.app/
+📌 **GitHub Repo:** 👉https://github.com/vinothkumar447/Love-Notes-AI 
 
 ---  
 

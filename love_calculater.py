@@ -10,8 +10,10 @@ from urllib.parse import quote  # For URL encoding
 os.environ["SERVER_FILE_WATCHER_TYPE"] = "none"
 
 # Load Hugging Face model & tokenizer (fallback to GPT-2 if DeepSeek-V3 fails)
-model_name = "deepseek-ai/DeepSeek-V3"  # Try loading DeepSeek-V3 first
-fallback_model = "gpt2"  # Fallback model if DeepSeek-V3 fails
+model_name = "gpt2"  # Use GPT-2 for Streamlit Cloud
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
 try:
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
@@ -91,7 +93,7 @@ def generate_love_note(name1, name2, years_in_love):
     try:
         response = generator(
             prompt,
-            max_length=300,  # Adjusted for approximately 150 words
+            max_new_tokens=100,  # FIXED: Ensures only new tokens are generated
             do_sample=True,
             temperature=0.7,  # Lower for more focused, higher for more creative
             top_p=0.9,  # Controls diversity
@@ -161,7 +163,8 @@ elif selected_model == "Love Notes":
             love_note = generate_love_note(name1, name2, years_in_love)
             st.write(f"💖 {love_note}")
             st.balloons()
-
+            
+            
             # Social Media Share Icons
             encoded_note = quote(love_note)  # URL encode the love note
             st.markdown(
@@ -188,13 +191,9 @@ elif selected_model == "Love Notes":
             )
     else:
         st.warning("Please enter names and years together to generate a love note.")
-        
 
 # Clear cached data
 st.cache_data.clear()
 
 # Clear cached resources (e.g., models, database connections)
 st.cache_resource.clear()
-
-# Footer
-st.markdown("---")
